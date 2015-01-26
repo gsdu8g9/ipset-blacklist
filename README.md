@@ -32,7 +32,7 @@ In order to auto-update the blacklist, the a cron jobs has been added to /etc/cr
 Using iptables, you can check how many packets got dropped using the blacklist:
 
 ```
-drfalken@wopr:~# iptables -L -vn
+user@server:~# iptables -L -vn
 Chain INPUT (policy DROP 3064 packets, 177K bytes)
  pkts bytes target     prot opt in     out     source               destination
    43  2498 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set blacklist src
