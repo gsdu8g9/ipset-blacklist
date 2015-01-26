@@ -8,7 +8,7 @@
 # http://www.stopforumspam.com/downloads/toxic_ip_cidr.txt
 
 # Require git, ipset, and iptables
-apt-get -qq --assume-yes install git ipset iptables > /dev/null
+apt-get -qq --assume-yes install curl git ipset iptables > /dev/null
 
 if [[ ! -e /usr/local/bin/update-blacklist.sh ]]; then
 
@@ -41,6 +41,7 @@ fi
 
 echo "Please add the following line to IPTables to enable this blacklist"
 echo "iptables -I INPUT -m set --match-set blacklist src -j DROP"
+iptables -I INPUT -m set --match-set blacklist src -j
 
 # Done
 
