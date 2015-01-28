@@ -41,7 +41,7 @@ fi
 
 echo "Please add the following line to IPTables to enable this blacklist"
 echo "iptables -I INPUT -m set --match-set blacklist src -j DROP"
-iptables -I INPUT -m set --match-set blacklist src -j
+iptables -I INPUT -m set --match-set blacklist src -j DROP
 
 # Done
 
